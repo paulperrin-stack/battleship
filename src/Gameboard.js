@@ -1,6 +1,7 @@
 const Gameboard = () => {
   const board = Array.from({ length: 10 }, () => Array(10).fill(null));
   const missedAttacks = [];
+  const attackedCoords = new Set();
   const ships = [];
 
   const placeShip = (ship, [row, col], direction = 'horizontal') => {
@@ -23,17 +24,21 @@ const Gameboard = () => {
   };
 
   const receiveAttack = ([row, col]) => {
+    const key = `${row},${col}`;
+    if (attackedCoords.has(key)) return;
+    attackedCoords.add(key);
+
     const target = board[row][col];
     if (target !== null) {
-        target.hit();
+      target.hit();
     } else {
-        missedAttacks.push([row, col]);
+      missedAttacks.push([row, col]);
     }
   };
 
   const allSunk = () => ships.every((ship) => ship.isSunk());
 
-  return { board, missedAttacks, placeShip, receiveAttack, allSunk };
+  return { board, missedAttacks, attackedCoords, placeShip, receiveAttack, allSunk };
 };
 
 export default Gameboard;
