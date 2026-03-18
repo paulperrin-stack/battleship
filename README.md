@@ -2,7 +2,9 @@
 
 ## Build order
 
-```Ship -> Gameboard -> Player -> Game -> DOM````
+```
+Ship -> Gameboard -> Player -> Game -> DOM
+```
 
 Write tests first for the first 3. Game and DOM don't need tests.
 

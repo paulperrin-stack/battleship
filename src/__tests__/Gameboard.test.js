@@ -10,7 +10,7 @@ test('places a ship horizontally on the board', () => {
     expect(gb.board[0][2]).toBe(ship);
 });
 
-test('places a ship vertically on the board', () => {
+test('places a ship vertically on the board', () => {
     const gb = Gameboard();
     const ship = Ship(3);
     gb.placeShip(ship, [0, 0], 'vertical');
