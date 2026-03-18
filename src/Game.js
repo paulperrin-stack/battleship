@@ -66,7 +66,7 @@ const Game = () => {
         human, 
         computer, 
         get isGameOver() { return isGameOver },
-        get winner() { return winner}, 
+        get winner() { return winner }, 
         setupBoards,
         handleAttack,
         registerUpdateCallback,
