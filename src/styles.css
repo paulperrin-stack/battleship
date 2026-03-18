@@ -1,0 +1,112 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: #0a1628;
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #93c5fd;
+}
+
+#new-game-btn {
+    padding: 0.5rem 1.2rem;
+    background: #1e3a5f;
+    color: #93c5fd;
+    border: 1px solid #3b82f6;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.board-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+h2 {
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+#message {
+    align-self: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    text-align: center;
+    max-width: 160px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 36px);
+    grid-template-rows: repeat(10, 36px);
+    gap: 2px;
+    background: #0f2240;
+    border: 1px solid #1e3a5f;
+    padding: 4px;
+}
+
+.cell {
+    width: 36px;
+    height: 36px;
+    background: #112240;
+    border-radius: 3px;
+}
+
+.cell.ship {
+    background: #1e4d8c;
+    border: 1px solid #2563eb;
+}
+
+.cell.hit {
+    background: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+.cell.miss {
+    background: #0f2a45;
+}
+
+.cell.clickable {
+    cursor: crosshair;
+}
+
+.cell.clickable:hover {
+    background: #1e3a5f;
+    border: 1px solid #3b82f6;
+}
+
+.board.enemy .cell.ship {
+    background: #112240;
+    border: none;
+}
