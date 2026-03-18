@@ -1,6 +1,5 @@
 import Player from './Player';
 import Ship from './Ship';
-import DOM from './DOM';
 
 const Game = () => {
     const human = Player('human');
@@ -66,8 +65,8 @@ const Game = () => {
     return {
         human, 
         computer, 
-        isGameOver, 
-        winner, 
+        get isGameOver() { return isGameOver },
+        get winner() { return winner}, 
         setupBoards,
         handleAttack,
         registerUpdateCallback,

@@ -7,7 +7,7 @@ const Ship = (length) => {
 
     const isSunk = () => hits >= length;
     
-    return { length, hit, isSunk };
+    return { length, hit, isSunk };
 };
 
 export default Ship;
